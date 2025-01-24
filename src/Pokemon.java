@@ -16,17 +16,17 @@ public abstract class Pokemon {
     this.strength = strength;
   }
 
-  protected void setNumPokemon(int numPokemon ) {
+  public void setNumPokemon(int numPokemon ) {
     this.numPokemon = numPokemon;
   }
-  protected int getNumPokemon() {
+  public int getNumPokemon() {
     return numPokemon;
   }
 
-  protected void setName(String name ) {
+  public void setName(String name ) {
     this.name = name;
   }
-  protected String getName() {
+  public String getName() {
     return name;
   }
 
