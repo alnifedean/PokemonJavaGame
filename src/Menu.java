@@ -1,12 +1,19 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Menu {
   
-  Pokemon obj;
-  public Pokemon menu(Pokemon pokemon1, Pokemon pokemon2) {
+  ArrayList<Pokemon> obj;
+  public ArrayList<Pokemon> menu(ArrayList<Pokemon> FilterP) {
     Scanner input = new Scanner(System.in);
     Random random = new Random();
+
+    Pokemon pokemon1 = (Pokemon) FilterP.get(0);
+    Pokemon pokemon2 = (Pokemon) FilterP.get(1);
+
+
+
     while (true) {
       int enemyRandom = random.nextInt(101);
 

@@ -1,7 +1,12 @@
+
 public class Pikachu extends Pokemon {
   
-  public Pikachu(int numPokemon, String name, String type, int hp, int strength) {
-    super(numPokemon, name, type, hp, strength);
+  public Pikachu() {
+    this.numPokemon = 25;
+    this.name = "pikachu";
+    this.type = "electrico";
+    this.hp = 10;
+    this.strength = 3;
   }
 
   @Override

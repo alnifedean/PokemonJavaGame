@@ -1,7 +1,11 @@
 public class Squirtle extends Pokemon {
   
-  public Squirtle(int numPokemon, String name, String type, int hp, int strength) {
-    super(numPokemon, name, type, hp, strength);
+  public Squirtle() {
+    this.numPokemon = 7;
+    this.name = "squirtle";
+    this.type = "agua";
+    this.hp = 12;
+    this.strength = 2;
   }
 
   @Override

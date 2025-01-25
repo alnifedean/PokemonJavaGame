@@ -1,7 +1,11 @@
 public class Charmander extends Pokemon {
 
-  public Charmander (int numPokemon, String name, String type, int hp, int strength) {
-    super(numPokemon, name, type, hp, strength);
+  public Charmander () {
+    this.numPokemon = 4;
+    this.name = "charmander";
+    this.type = "fuego";
+    this.hp = 8;
+    this.strength = 4;
   }
 
   @Override

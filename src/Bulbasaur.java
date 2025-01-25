@@ -1,7 +1,11 @@
 public class Bulbasaur extends Pokemon {
   
-  public Bulbasaur(int numPokemon, String name, String type, int hp, int strength) {
-    super(numPokemon, name, type, hp, strength);
+  public Bulbasaur() { 
+    this.numPokemon = 1;
+    this.name = "bulbasaur";
+    this.type = "planta";
+    this.hp = 14;
+    this.strength = 1;
   }
 
   @Override
