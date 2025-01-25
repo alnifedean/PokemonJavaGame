@@ -8,6 +8,6 @@ public class App {
 
         Menu screen = new Menu();
         screen.menu(FilterP);
-
+        
     }
 }

@@ -52,7 +52,7 @@ public abstract class Pokemon {
   }
   
 
-  public abstract void attack();
+  public abstract void attack(Pokemon target);
   public abstract void heal();
   public abstract void run();
 

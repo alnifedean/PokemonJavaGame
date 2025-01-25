@@ -2,25 +2,28 @@ public class Bulbasaur extends Pokemon {
   
   public Bulbasaur() { 
     this.numPokemon = 1;
-    this.name = "bulbasaur";
-    this.type = "planta";
-    this.hp = 14;
-    this.strength = 1;
+    this.name = "Bulbasaur";
+    this.type = "Grass/Poison";
+    this.hp = 28;
+    this.strength = 2;
   }
 
   @Override
-  public void attack() {
-    System.out.println("Me llamo bulbasaur y ataco");
+  public void attack(Pokemon poke) {
+    System.out.println("My name is bulbasaur and I attack");
+    int life = poke.getHp()- this.strength;
+    poke.setHp(life);
   }
 
   @Override
   public void heal() {
-    System.out.println("Me llamo bulbasaur y me curo");
+    System.out.println("My name is bulbasaur and I heal");
+    this.setHp(this.getHp()+2);
   }
 
   @Override
   public void run() {
-    System.out.println("Me llamo bulbasaur y huyo");
+    System.out.println("My name is bulbasaur and I run");
   }
 }
 
