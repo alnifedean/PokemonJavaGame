@@ -16,11 +16,31 @@ public class Pokedex {
     Charmander charmander = new Charmander();
     Squirtle vamoACalmarno = new Squirtle();
     Pikachu pikachu = new Pikachu();
+    Abra abra = new Abra();
+    Caterpie caterpie = new Caterpie();
+    Clefairy clefairy = new Clefairy();
+    Dewgong dewgong = new Dewgong();
+    Dratini dratini = new Dratini();
+    Gastly gastly = new Gastly();
+    Geodude geodude = new Geodude();
+    Mankey mankey = new Mankey();
+    Pidgey pidgey = new Pidgey();
+    Sandshrew sandshrew = new Sandshrew();
 
     pokemonList.add(bulbasaur);
     pokemonList.add(charmander);
     pokemonList.add(vamoACalmarno);
     pokemonList.add(pikachu);
+    pokemonList.add(abra);
+    pokemonList.add(caterpie);
+    pokemonList.add(clefairy);
+    pokemonList.add(dewgong);
+    pokemonList.add(dratini);
+    pokemonList.add(gastly);
+    pokemonList.add(geodude);
+    pokemonList.add(mankey);
+    pokemonList.add(pidgey);
+    pokemonList.add(sandshrew);
   }
   
 
