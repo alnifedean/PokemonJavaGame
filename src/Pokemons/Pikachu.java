@@ -1,3 +1,4 @@
+package Pokemons;
 
 public class Pikachu extends Pokemon {
   

@@ -1,3 +1,5 @@
+package Pokemons;
+
 public class Clefairy extends Pokemon{
   public Clefairy() { 
     this.numPokemon = 35;

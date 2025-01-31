@@ -1,3 +1,5 @@
+package Pokemons;
+
 public abstract class Pokemon {
   
   protected int numPokemon;
@@ -44,24 +46,24 @@ public abstract class Pokemon {
     return name;
   }
 
-  protected void setType(String type ) {
+  public void setType(String type ) {
     this.type = type;
   }
-  protected String getType() {
+  public String getType() {
     return type;
   }
 
-  protected void setHp(int hp ) {
+  public void setHp(int hp ) {
     this.hp = hp;
   }
-  protected int getHp() {
+  public int getHp() {
     return hp;
   }
 
-  protected void setStrength(int strength ) {
+  public void setStrength(int strength ) {
     this.strength = strength;
   }
-  protected int getStrength() {
+  public int getStrength() {
     return strength;
   }
   

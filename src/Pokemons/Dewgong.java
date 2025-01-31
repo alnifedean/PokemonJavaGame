@@ -1,3 +1,5 @@
+package Pokemons;
+
 public class Dewgong extends Pokemon {
   
   public Dewgong() { 

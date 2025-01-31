@@ -1,3 +1,5 @@
+package Pokemons;
+
 public class Geodude extends Pokemon {
   public Geodude() { 
     this.numPokemon = 74;

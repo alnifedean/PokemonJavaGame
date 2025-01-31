@@ -1,3 +1,5 @@
+package Pokemons;
+
 public class Abra extends Pokemon {
   public Abra() { 
     this.numPokemon = 63;

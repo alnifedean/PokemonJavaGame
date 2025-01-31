@@ -1,3 +1,5 @@
+package Pokemons;
+
 public class Mankey extends Pokemon {
   public Mankey() { 
     this.numPokemon = 56;

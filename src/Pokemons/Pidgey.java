@@ -1,3 +1,5 @@
+package Pokemons;
+
 public class Pidgey extends Pokemon {
   public Pidgey() { 
     this.numPokemon = 16;

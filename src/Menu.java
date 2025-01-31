@@ -1,6 +1,9 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
+
+import Pokemons.*;
 
 public class Menu {
   
@@ -8,20 +11,31 @@ public class Menu {
   public ArrayList<Pokemon> menu(ArrayList<Pokemon> FilterP) {
     Scanner input = new Scanner(System.in);
     Random random = new Random();
+    Pokemon pokemon1 = null;
+    Pokemon pokemon2 = null;
+    int sel = 0;
 
-    Pokemon pokemon1 = (Pokemon) FilterP.get(0);
-    Pokemon pokemon2 = (Pokemon) FilterP.get(1);
+    try {
+      pokemon1 = (Pokemon) FilterP.get(0);
+      pokemon2 = (Pokemon) FilterP.get(1);
+    } catch (Exception e) {
+      System.out.println("Something whent wrong casting the list...");
+    }
 
 
 
     while (true) {
       int enemyRandom = random.nextInt(101);
-
+      
       if (pokemon1.getHp()<=0) {
-        System.out.println(pokemon2.getName()+" ha ganado.");
+        System.out.println("\n====================================================================================");
+        System.out.println("\t"+pokemon2.getName()+" ha ganado.");
+        System.out.println("====================================================================================");
         break;
       } else if (pokemon2.getHp()<=0) {
-        System.out.println(pokemon1.getName()+" ha ganado.");
+        System.out.println("\n====================================================================================");
+        System.out.println("\t"+pokemon1.getName()+" ha ganado.");
+        System.out.println("====================================================================================");
         break;
       }
 
@@ -39,7 +53,19 @@ public class Menu {
       System.out.println("           1.- attack   2.- heal   3.- run                                          ");
       System.out.println("=  ==============================================================================  =");
       System.out.print("=  Select you next mouvement (using the numbers 1, 2 or 3): ");
-      int sel = input.nextInt();
+      
+      try {
+        sel = input.nextInt();
+
+        if (sel<1 || sel>3) {
+          throw new InputMismatchException("Invalid option...");
+        }
+      } catch (Exception e) {
+        System.out.println("You selected an invalid option, pelase select 1, 2 or 3!!");
+        input.nextLine();
+        continue;
+      }
+      
       System.out.println("=  ==============================================================================  =");
       System.out.println("\n\n");
       System.out.println("************************************************************************************");
@@ -68,7 +94,7 @@ public class Menu {
       System.out.println("************************************************************************************");
       
     }
-
+    input.close();
     return obj;
   }
 }

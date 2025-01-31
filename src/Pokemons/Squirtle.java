@@ -1,3 +1,5 @@
+package Pokemons;
+
 public class Squirtle extends Pokemon {
   
   public Squirtle() {

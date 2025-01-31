@@ -1,3 +1,5 @@
+package Pokemons;
+
 public class Sandshrew extends Pokemon {
   
   public Sandshrew() { 

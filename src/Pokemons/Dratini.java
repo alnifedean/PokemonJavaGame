@@ -1,3 +1,5 @@
+package Pokemons;
+
 public class Dratini extends Pokemon {
   public Dratini() { 
     this.numPokemon = 147;

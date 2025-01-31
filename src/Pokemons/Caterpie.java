@@ -1,3 +1,5 @@
+package Pokemons;
+
 public class Caterpie extends Pokemon {
   public Caterpie() { 
     this.numPokemon = 1;

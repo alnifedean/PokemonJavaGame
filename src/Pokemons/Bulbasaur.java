@@ -1,3 +1,5 @@
+package Pokemons;
+
 public class Bulbasaur extends Pokemon {
   
   public Bulbasaur() { 
