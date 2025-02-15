@@ -1,18 +1,9 @@
 package Pokemons;
 
 public class Sandshrew extends Pokemon {
-  
-  public Sandshrew() { 
-    this.numPokemon = 1;
-    this.name = "Sandshrew";
-    this.type = "Ground";
-    this.hp = 28;
-    this.strength = 2;
-    // Ground
-    this.strongTo1 = "Electric";
-    this.strongTo2 = "Fire";
-    this.strongTo3 = "Poison";
-    this.strongTo4 = "Rock";
+
+  public Sandshrew(){
+    super(27, "Sandshrew", "Ground", 28, 2, "Electric" , "Fire", "Poison", "Rock", null, null, null);
   }
 
   @Override
@@ -20,9 +11,9 @@ public class Sandshrew extends Pokemon {
     System.out.println("My name is sandshrew and I attack");
     String typeP = poke.getType();
 
-    int typeDamage = typeP.contains(strongTo1) || typeP.contains(strongTo2) || typeP.contains(strongTo3) || typeP.contains(strongTo4) ? 1 : 0;
+    int typeDamage = typeP.contains(this.getStrongTo1()) || typeP.contains(this.getStrongTo2()) || typeP.contains(this.getStrongTo3()) || typeP.contains(this.getStrongTo4()) ? 1 : 0;
 
-    int life = poke.getHp() - this.strength - typeDamage;
+    int life = poke.getHp() - this.getStrength() - typeDamage;
     poke.setHp(life);
   }
 

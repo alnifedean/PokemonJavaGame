@@ -1,15 +1,9 @@
 package Pokemons;
 
 public class Clefairy extends Pokemon{
-  public Clefairy() { 
-    this.numPokemon = 35;
-    this.name = "Clefairy";
-    this.type = "Fairy";
-    this.hp = 32;
-    this.strength = 1;
-    // Fairy
-    this.strongTo1 = "Fighting";
-    this.strongTo2 = "Dragon";
+
+  public Clefairy(){
+    super(35, "Clefairy", "Fairy", 32, 1, "Fighting" , "Dragon", null, null, null, null, null);
   }
 
   @Override
@@ -17,9 +11,9 @@ public class Clefairy extends Pokemon{
     System.out.println("My name is clefairy and I attack");
     String typeP = poke.getType();
 
-    int typeDamage = typeP.contains(strongTo1) ? 1 : 0;
+    int typeDamage = typeP.contains(this.getStrongTo1()) || typeP.contains(this.getStrongTo2()) ? 1 : 0;
 
-    int life = poke.getHp() - this.strength - typeDamage;
+    int life = poke.getHp() - this.getStrength() - typeDamage;
     poke.setHp(life);
   }
 

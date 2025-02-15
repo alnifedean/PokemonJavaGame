@@ -1,18 +1,9 @@
 package Pokemons;
 
 public class Gastly extends Pokemon {
-  public Gastly() { 
-    this.numPokemon = 92;
-    this.name = "Gastly";
-    this.type = "Ghost/Poison";
-    this.hp = 18;
-    this.strength = 8;
-    // Ghost
-    this.strongTo1 = "Psychic";
-    // Posion
-    this.strongTo2 = "Bug";
-    this.strongTo3 = "Fairy";
-    this.strongTo4 = "Grass";
+
+  public Gastly(){
+    super(92, "Gastly", "Ghost/Poison", 18, 8, "Psychic" , "Bug", "Fairy", "Grass", null, null, null);
   }
 
   @Override
@@ -20,9 +11,9 @@ public class Gastly extends Pokemon {
     System.out.println("My name is gastly and I attack");
     String typeP = poke.getType();
 
-    int typeDamage = typeP.contains(strongTo1) || typeP.contains(strongTo2) || typeP.contains(strongTo3) || typeP.contains(strongTo4) ? 1 : 0;
+    int typeDamage = typeP.contains(this.getStrongTo1()) || typeP.contains(this.getStrongTo2()) || typeP.contains(this.getStrongTo3()) || typeP.contains(this.getStrongTo4()) ? 1 : 0;
 
-    int life = poke.getHp() - this.strength - typeDamage;
+    int life = poke.getHp() - this.getStrength() - typeDamage;
     poke.setHp(life);
   }
 

@@ -1,16 +1,9 @@
 package Pokemons;
 
 public class Pidgey extends Pokemon {
-  public Pidgey() { 
-    this.numPokemon = 16;
-    this.name = "Pidgey";
-    this.type = "Normal/Flying";
-    this.hp = 20;
-    this.strength = 8;
-    // Flying
-    this.strongTo1 = "Grass";
-    this.strongTo2 = "Bug";
-    this.strongTo3 = "Fighting";
+
+  public Pidgey(){
+    super(16, "Pidgey", "Normal/Flying", 20, 8, "Grass" , "Bug", "Fighting", null, null, null, null);
   }
 
   @Override
@@ -18,9 +11,9 @@ public class Pidgey extends Pokemon {
     System.out.println("My name is pidgey and I attack");
     String typeP = poke.getType();
 
-    int typeDamage = typeP.contains(strongTo1) || typeP.contains(strongTo2) || typeP.contains(strongTo3) ? 1 : 0;
+    int typeDamage = typeP.contains(this.getStrongTo1()) || typeP.contains(this.getStrongTo2()) || typeP.contains(this.getStrongTo3()) ? 1 : 0;
 
-    int life = poke.getHp() - this.strength - typeDamage;
+    int life = poke.getHp() - this.getStrength() - typeDamage;
     poke.setHp(life);
   }
 

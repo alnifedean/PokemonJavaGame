@@ -16,8 +16,8 @@ public class Menu {
     int sel = 0;
 
     try {
-      pokemon1 = (Pokemon) FilterP.get(0);
-      pokemon2 = (Pokemon) FilterP.get(1);
+      pokemon1 = FilterP.get(0);
+      pokemon2 = FilterP.get(1);
     } catch (Exception e) {
       System.out.println("Something whent wrong casting the list...");
     }

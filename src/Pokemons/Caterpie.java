@@ -1,15 +1,9 @@
 package Pokemons;
 
 public class Caterpie extends Pokemon {
-  public Caterpie() { 
-    this.numPokemon = 1;
-    this.name = "Caterpie";
-    this.type = "Bug";
-    this.hp = 28;
-    this.strength = 2;
-    // Grass
-    this.strongTo1 = "Grass";
-    this.strongTo2 = "Psychic";
+
+  public Caterpie(){
+    super(10, "Caterpie", "Bug", 28, 2, "Grass" , "Psychic", null, null, null, null, null);
   }
 
   @Override
@@ -17,9 +11,9 @@ public class Caterpie extends Pokemon {
     System.out.println("My name is caterpie and I attack");
     String typeP = poke.getType();
 
-    int typeDamage = typeP.contains(strongTo1) || typeP.contains(strongTo2) ? 1 : 0;
+    int typeDamage = typeP.contains(this.getStrongTo1()) || typeP.contains(this.getStrongTo2()) ? 1 : 0;
 
-    int life = poke.getHp() - this.strength - typeDamage;
+    int life = poke.getHp() - this.getStrength() - typeDamage;
     poke.setHp(life);
   }
 

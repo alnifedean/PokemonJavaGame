@@ -1,14 +1,9 @@
 package Pokemons;
 
 public class Dratini extends Pokemon {
-  public Dratini() { 
-    this.numPokemon = 147;
-    this.name = "Dratini";
-    this.type = "Dragon";
-    this.hp = 22;
-    this.strength = 8;
-    // Dragon
-    this.strongTo1 = "Dragon";
+
+  public Dratini(){
+    super(147, "Dratini", "Dragon", 22, 8, "Dragon" , null, null, null, null, null, null);
   }
 
   @Override
@@ -16,9 +11,9 @@ public class Dratini extends Pokemon {
     System.out.println("My name is dratini and I attack");
     String typeP = poke.getType();
 
-    int typeDamage = typeP.contains(strongTo1) ? 1 : 0;
+    int typeDamage = typeP.contains(this.getStrongTo1()) ? 1 : 0;
 
-    int life = poke.getHp() - this.strength - typeDamage;
+    int life = poke.getHp() - this.getStrength() - typeDamage;
     poke.setHp(life);
   }
 

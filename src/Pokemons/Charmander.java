@@ -1,28 +1,26 @@
 package Pokemons;
+import Interf.AttackFire;
 
-public class Charmander extends Pokemon {
+public class Charmander extends Pokemon implements AttackFire {
 
-  public Charmander () {
-    this.numPokemon = 4;
-    this.name = "Charmander";
-    this.type = "Fire";
-    this.hp = 17;
-    this.strength = 8;
-    this.strongTo1 = "Grass";
-    this.strongTo2 = "Bug";
-    this.strongTo3 = "Ice";
-    this.strongTo4 = "Steel";
+  public Charmander(){
+    super(4, "Charmander", "Fire", 17, 8, "Grass" , "Bug", "Ice", "Steel", null, null, null);
   }
 
   @Override
   public void attack(Pokemon poke) {
     System.out.println("My name is charmander and I attack");
     String typeP = poke.getType();
+    int typeDamage = typeP.contains(this.getStrongTo1()) || typeP.contains(this.getStrongTo2()) || typeP.contains(this.getStrongTo3()) || typeP.contains(this.getStrongTo4()) ? 1 : 0;
 
-    int typeDamage = typeP.contains(strongTo1) || typeP.contains(strongTo2) || typeP.contains(strongTo3) || typeP.contains(strongTo4) ? 1 : 0;
-
-    int life = poke.getHp() - this.strength - typeDamage;
+    int life = poke.getHp() - this.getStrength() - typeDamage;
     poke.setHp(life);
+  }
+
+  @Override
+  public void Flamethrower() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'Flamethrower'");
   }
 
   @Override
@@ -35,5 +33,6 @@ public class Charmander extends Pokemon {
   public void run() {
     System.out.println("My name is charmander and I run");
   }
+
 
 }

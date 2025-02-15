@@ -1,16 +1,9 @@
 package Pokemons;
 
 public class Mankey extends Pokemon {
-  public Mankey() { 
-    this.numPokemon = 56;
-    this.name = "Mankey";
-    this.type = "Fighting";
-    this.hp = 20;
-    this.strength = 6;
-    // Fighting
-    this.strongTo1 = "Normal";
-    this.strongTo2 = "Ice";
-    this.strongTo3 = "Rock";
+
+  public Mankey(){
+    super(56, "Mankey", "Fighting", 20, 6, "Normal", "Ice", "Rock", null, null, null, null);
   }
 
   @Override
@@ -18,9 +11,9 @@ public class Mankey extends Pokemon {
     System.out.println("My name is mankey and I attack");
     String typeP = poke.getType();
 
-    int typeDamage = typeP.contains(strongTo1) || typeP.contains(strongTo2) || typeP.contains(strongTo3) ? 1 : 0;
+    int typeDamage = typeP.contains(this.getStrongTo1()) || typeP.contains(this.getStrongTo2()) || typeP.contains(this.getStrongTo3()) ? 1 : 0;
 
-    int life = poke.getHp() - this.strength - typeDamage;
+    int life = poke.getHp() - this.getStrength() - typeDamage;
     poke.setHp(life);
   }
 

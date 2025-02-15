@@ -2,18 +2,18 @@ package Pokemons;
 
 public abstract class Pokemon {
   
-  protected int numPokemon;
-  protected String name;
-  protected String type;
-  protected int hp;
-  protected int strength;
-  protected String strongTo1;
-  protected String strongTo2;
-  protected String strongTo3;
-  protected String strongTo4;
-  protected String strongTo5;
-  protected String strongTo6;
-  protected String strongTo7;
+  private int numPokemon;
+  private String name;
+  private String type;
+  private int hp;
+  private int strength;
+  private String strongTo1;
+  private String strongTo2;
+  private String strongTo3;
+  private String strongTo4;
+  private String strongTo5;
+  private String strongTo6;
+  private String strongTo7;
 
   public Pokemon() {}
 
