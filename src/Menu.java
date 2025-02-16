@@ -14,6 +14,7 @@ public class Menu {
     Pokemon pokemon1 = null;
     Pokemon pokemon2 = null;
     int sel = 0;
+    int selType;
 
     try {
       pokemon1 = FilterP.get(0);
@@ -56,7 +57,6 @@ public class Menu {
       
       try {
         sel = input.nextInt();
-
         if (sel<1 || sel>3) {
           throw new InputMismatchException("Invalid option...");
         }
@@ -67,12 +67,41 @@ public class Menu {
       }
       
       System.out.println("=  ==============================================================================  =");
+      if(pokemon2.getType().contains("/")) {
+        String [] splitString = pokemon2.getType().split("/");
+        System.out.print("=  Select the attack type (1.- "+splitString[0]+" 2.- "+splitString[1]+"): ");
+        try {
+          selType = input.nextInt();
+          if (sel<1 || sel>2) {
+            throw new InputMismatchException("Invalid option...");
+          }
+        } catch (Exception e) {
+          System.out.println("You selected an invalid option, pelase select 1, 2 or 3!!");
+          input.nextLine();
+          continue;
+        }
+      } else {
+        System.out.print("=  Select the attack type (1.- "+pokemon2.getType()+" 2.- "+"Normal"+"): ");
+        try {
+          selType = input.nextInt();
+          if (sel<1 || sel>2) {
+            throw new InputMismatchException("Invalid option...");
+          }
+        } catch (Exception e) {
+          System.out.println("You selected an invalid option, pelase select 1, 2 or 3!!");
+          input.nextLine();
+          continue;
+        }
+      }
+
+
+      System.out.println("=  ==============================================================================  =");
       System.out.println("\n\n");
       System.out.println("************************************************************************************");
       System.out.print("\tYou: ");
       
       if (sel == 1) {
-        pokemon2.attack(pokemon1);
+        pokemon2.attack(pokemon1, selType);
       } else if (sel == 2) {
         pokemon2.heal();
       } else {
@@ -83,7 +112,7 @@ public class Menu {
 
       System.out.print("\tOponent: ");
       if (enemyRandom <= 85) {
-        pokemon1.attack(pokemon2);
+        pokemon1.attack(pokemon2, random.nextInt(2)+1);
       } else if (enemyRandom <= 95) {
         pokemon1.heal();
       } else if (enemyRandom <=100) {

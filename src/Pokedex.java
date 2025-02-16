@@ -13,37 +13,21 @@ public class Pokedex {
     pokemonList = new ArrayList<>();
     pokemonFiltered = new ArrayList<>();
 
-    Bulbasaur bulbasaur = new Bulbasaur();
-    Charmander charmander = new Charmander();
-    Squirtle vamoACalmarno = new Squirtle();
-    Pikachu pikachu = new Pikachu();
-    Abra abra = new Abra();
-    Caterpie caterpie = new Caterpie();
-    Clefairy clefairy = new Clefairy();
-    Dewgong dewgong = new Dewgong();
-    Dratini dratini = new Dratini();
-    Gastly gastly = new Gastly();
-    Geodude geodude = new Geodude();
-    Mankey mankey = new Mankey();
-    Pidgey pidgey = new Pidgey();
-    Sandshrew sandshrew = new Sandshrew();
-
-    pokemonList.add(bulbasaur);
-    pokemonList.add(charmander);
-    pokemonList.add(vamoACalmarno);
-    pokemonList.add(pikachu);
-    pokemonList.add(abra);
-    pokemonList.add(caterpie);
-    pokemonList.add(clefairy);
-    pokemonList.add(dewgong);
-    pokemonList.add(dratini);
-    pokemonList.add(gastly);
-    pokemonList.add(geodude);
-    pokemonList.add(mankey);
-    pokemonList.add(pidgey);
-    pokemonList.add(sandshrew);
+    pokemonList.add(new Bulbasaur());
+    pokemonList.add(new Charmander());
+    pokemonList.add(new Squirtle());
+    pokemonList.add(new Pikachu());
+    pokemonList.add(new Abra());
+    pokemonList.add(new Caterpie());
+    pokemonList.add(new Clefairy());
+    pokemonList.add(new Dewgong());
+    pokemonList.add(new Dratini());
+    pokemonList.add(new Gastly());
+    pokemonList.add(new Geodude());
+    pokemonList.add(new Mankey());
+    pokemonList.add(new Pidgey());
+    pokemonList.add(new Sandshrew());
   }
-  
 
   public ArrayList<Pokemon> filterP() {
     int indexRandom1 = random.nextInt(pokemonList.size());

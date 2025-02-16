@@ -7,13 +7,17 @@ public class Squirtle extends Pokemon {
   }
 
   @Override
-  public void attack(Pokemon poke) {
+  public void attack(Pokemon poke, int atkTypeSel) {
     System.out.println("My name is squirtle and I attack");
+    int life;
     String typeP = poke.getType();
 
-    int typeDamage = typeP.contains(this.getStrongTo1()) || typeP.contains(this.getStrongTo2()) || typeP.contains(this.getStrongTo3()) ? 1 : 0;
-
-    int life = poke.getHp() - this.getStrength() - typeDamage;
+    if(atkTypeSel==1){
+      int typeDamage = typeP.contains(this.getStrongTo1()) || typeP.contains(this.getStrongTo2()) || typeP.contains(this.getStrongTo3()) ? 1 : 0;
+      life = poke.getHp() - this.getStrength() - typeDamage;
+    } else {
+      life = poke.getHp() - this.getStrength();
+    }
     poke.setHp(life);
   }
 

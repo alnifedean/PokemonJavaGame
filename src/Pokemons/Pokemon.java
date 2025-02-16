@@ -116,7 +116,12 @@ public abstract class Pokemon {
     return strongTo7;
   }
 
-  public abstract void attack(Pokemon target);
+  @Override
+  public String toString() {
+    return "No.- "+this.numPokemon+" "+this.name+" is a pokemon type "+this.type;
+  }
+
+  public abstract void attack(Pokemon target, int atkTypeSel);
   public abstract void heal();
   public abstract void run();
 
