@@ -1,14 +1,15 @@
 package Pokemons;
 
-public class Dewgong extends Pokemon {
+public class WaterIcePokemon extends Pokemon {
 
-  public Dewgong(){
-    super(87, "Dewgong", "Water/Ice", 24, 4, "Fire" , "Ground", "Rock", "Grass", "Flying", "Dragon", null);
+  public WaterIcePokemon(int numPokemon, String name, String type, int hp, int strength, String strongTo1, String strongTo2, String strongTo3, String strongTo4, String strongTo5, String strongTo6, String strongTo7){ 
+      super(numPokemon, name, type, hp, strength, strongTo1, strongTo2, strongTo3, strongTo4, strongTo5, strongTo6, strongTo7);
+    // super(87, "Dewgong", "Water/Ice", 24, 4, "Fire" , "Ground", "Rock", "Grass", "Flying", "Dragon", null);
   }
 
   @Override
   public void attack(Pokemon poke, int atkTypeSel) {
-    System.out.println("My name is dewgong and I attack");
+    System.out.println("My name is "+this.getName()+" and I attack");
     int life;
     String typeP = poke.getType();
 
@@ -24,12 +25,12 @@ public class Dewgong extends Pokemon {
 
   @Override
   public void heal() {
-    System.out.println("My name is dewgong and I heal");
+    System.out.println("My name is "+this.getName()+" and I heal");
     this.setHp(this.getHp()+2);
   }
 
   @Override
   public void run() {
-    System.out.println("My name is dewgong and I run");
+    System.out.println("My name is "+this.getName()+" and I run");
   }
 }

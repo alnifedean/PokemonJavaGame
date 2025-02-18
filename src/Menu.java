@@ -2,13 +2,12 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
-
 import Pokemons.*;
 
 public class Menu {
   
-  ArrayList<Pokemon> obj;
-  public ArrayList<Pokemon> menu(ArrayList<Pokemon> FilterP) {
+
+  public void menu(ArrayList<Pokemon> FilterP) {
     Scanner input = new Scanner(System.in);
     Random random = new Random();
     Pokemon pokemon1 = null;
@@ -20,9 +19,8 @@ public class Menu {
       pokemon1 = FilterP.get(0);
       pokemon2 = FilterP.get(1);
     } catch (Exception e) {
-      System.out.println("Something whent wrong casting the list...");
+      System.out.println("Something went wrong casting the list...");
     }
-
 
 
     while (true) {
@@ -30,12 +28,12 @@ public class Menu {
       
       if (pokemon1.getHp()<=0) {
         System.out.println("\n====================================================================================");
-        System.out.println("\t"+pokemon2.getName()+" ha ganado.");
+        System.out.println("\t"+pokemon2.getName()+" won!!!.");
         System.out.println("====================================================================================");
         break;
       } else if (pokemon2.getHp()<=0) {
         System.out.println("\n====================================================================================");
-        System.out.println("\t"+pokemon1.getName()+" ha ganado.");
+        System.out.println("\t"+pokemon1.getName()+" won!!!.");
         System.out.println("====================================================================================");
         break;
       }
@@ -67,32 +65,34 @@ public class Menu {
       }
       
       System.out.println("=  ==============================================================================  =");
-      if(pokemon2.getType().contains("/")) {
-        String [] splitString = pokemon2.getType().split("/");
-        System.out.print("=  Select the attack type (1.- "+splitString[0]+" 2.- "+splitString[1]+"): ");
-        try {
-          selType = input.nextInt();
-          if (sel<1 || sel>2) {
-            throw new InputMismatchException("Invalid option...");
+      if(sel==1) {  
+        if(pokemon2.getType().contains("/")) {
+          String [] splitString = pokemon2.getType().split("/");
+          System.out.print("=  Select the attack type (1.- "+splitString[0]+" 2.- "+splitString[1]+"): ");
+          try {
+            selType = input.nextInt();
+            if (sel<1 || sel>2) {
+              throw new InputMismatchException("Invalid option...");
+            }
+          } catch (Exception e) {
+            System.out.println("You selected an invalid option, pelase select 1, 2 or 3!!");
+            input.nextLine();
+            continue;
           }
-        } catch (Exception e) {
-          System.out.println("You selected an invalid option, pelase select 1, 2 or 3!!");
-          input.nextLine();
-          continue;
-        }
-      } else {
-        System.out.print("=  Select the attack type (1.- "+pokemon2.getType()+" 2.- "+"Normal"+"): ");
-        try {
-          selType = input.nextInt();
-          if (sel<1 || sel>2) {
-            throw new InputMismatchException("Invalid option...");
+        } else {
+          System.out.print("=  Select the attack type (1.- "+pokemon2.getType()+" 2.- "+"Normal"+"): ");
+          try {
+            selType = input.nextInt();
+            if (sel<1 || sel>2) {
+              throw new InputMismatchException("Invalid option...");
+            }
+          } catch (Exception e) {
+            System.out.println("You selected an invalid option, pelase select 1, 2 or 3!!");
+            input.nextLine();
+            continue;
           }
-        } catch (Exception e) {
-          System.out.println("You selected an invalid option, pelase select 1, 2 or 3!!");
-          input.nextLine();
-          continue;
         }
-      }
+      } else {selType=1;}
 
 
       System.out.println("=  ==============================================================================  =");
@@ -106,7 +106,7 @@ public class Menu {
         pokemon2.heal();
       } else {
         pokemon2.run();
-        System.out.println(pokemon1.getName()+" ha ganado.");
+        System.out.println(pokemon1.getName()+" won!!!");
         break;
       }
 
@@ -117,13 +117,11 @@ public class Menu {
         pokemon1.heal();
       } else if (enemyRandom <=100) {
         pokemon1.run();
-        System.out.println(pokemon2.getName()+" ha ganado.");
+        System.out.println(pokemon2.getName()+" won!!!");
         break;
       }
       System.out.println("************************************************************************************");
-      
     }
     input.close();
-    return obj;
   }
 }
