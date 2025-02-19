@@ -1,10 +1,25 @@
 package Pokemons;
+import Interf.Constants;
+import Interf.IGround;
+import Interf.IRock;
 
-public class RockGroundPokemon extends Pokemon {
+public class RockGroundPokemon extends Pokemon implements IRock, IGround {
 
   public RockGroundPokemon(int numPokemon, String name, String type, int hp, int strength, String strongTo1, String strongTo2, String strongTo3, String strongTo4, String strongTo5, String strongTo6, String strongTo7){ 
     super(numPokemon, name, type, hp, strength, strongTo1, strongTo2, strongTo3, strongTo4, strongTo5, strongTo6, strongTo7);
     // super(74, "Geodude", "Rock/Ground", 22, 6, "Fire", "Flying", "Ice", "Bug", "Poison", "Rock", "Electric");
+  }
+
+  @Override
+  public int RockAttack(String typeP) {
+    int typeB = Constants.TYPE_BOOST;
+    return typeP.contains(this.getStrongTo1()) || typeP.contains(this.getStrongTo2()) || typeP.contains(this.getStrongTo3()) || typeP.contains(this.getStrongTo4()) ?typeB : 0;
+  }
+
+  @Override
+  public int GroundAttack(String typeP) {
+    int typeB = Constants.TYPE_BOOST;
+    return typeP.contains(this.getStrongTo5()) || typeP.contains(this.getStrongTo6()) || typeP.contains(this.getStrongTo7()) ? typeB : 0;
   }
 
   @Override
@@ -14,10 +29,10 @@ public class RockGroundPokemon extends Pokemon {
     String typeP = poke.getType();
 
     if(atkTypeSel==1){
-      int typeDamage = typeP.contains(this.getStrongTo1()) || typeP.contains(this.getStrongTo2()) || typeP.contains(this.getStrongTo3()) || typeP.contains(this.getStrongTo4()) ? 1 : 0;
+      int typeDamage = RockAttack(typeP);
       life = poke.getHp() - this.getStrength() - typeDamage;
     } else {
-      int typeDamage = typeP.contains(this.getStrongTo5()) || typeP.contains(this.getStrongTo6()) || typeP.contains(this.getStrongTo7()) ? 1 : 0;
+      int typeDamage = GroundAttack(typeP);
       life = poke.getHp() - this.getStrength() - typeDamage;
     }
     poke.setHp(life);

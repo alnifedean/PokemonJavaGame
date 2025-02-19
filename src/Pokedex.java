@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import Pokemons.*;
 
 public class Pokedex {
   
-  ArrayList<Pokemon> pokemonList;
-  ArrayList<Pokemon> pokemonFiltered;
+  List<Pokemon> pokemonList;
+  List<Pokemon> pokemonFiltered;
   Random random = new Random();
   
   
@@ -29,7 +30,7 @@ public class Pokedex {
     pokemonList.add(new GroundPokemon(27, "Sandshrew", "Ground", 28, 2, "Electric" , "Fire", "Poison", "Rock", null, null, null));
   }
 
-  public ArrayList<Pokemon> filterP() {
+  public List<Pokemon> filterP() {
     int indexRandom1 = random.nextInt(pokemonList.size());
     int indexRandom2 = random.nextInt(pokemonList.size());
 
